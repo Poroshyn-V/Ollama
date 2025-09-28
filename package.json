@@ -1,0 +1,13 @@
+{
+  "name": "ollama-service",
+  "version": "1.0.0",
+  "description": "Ollama AI service for AdWatch Bot",
+  "main": "setup-models.sh",
+  "scripts": {
+    "start": "/setup-models.sh",
+    "health": "curl -f http://localhost:11434/api/tags || exit 1"
+  },
+  "keywords": ["ollama", "ai", "llm", "whisper", "llama", "mistral"],
+  "author": "AdWatch Team",
+  "license": "MIT"
+}
