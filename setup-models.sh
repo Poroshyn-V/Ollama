@@ -6,22 +6,22 @@ ollama serve &
 
 # Ждем запуска сервера
 echo "⏳ Waiting for Ollama to start..."
-sleep 30
+sleep 60
 
 # Проверяем, что сервер запустился
 echo "🔍 Checking Ollama server status..."
-for i in {1..20}; do
-  if curl -f http://localhost:11434/api/tags > /dev/null 2>&1; then
+for i in {1..30}; do
+  if curl -f http://127.0.0.1:11434/api/tags > /dev/null 2>&1; then
     echo "✅ Ollama server is running!"
     break
   else
-    echo "⏳ Waiting for server... ($i/20)"
+    echo "⏳ Waiting for server... ($i/30)"
     sleep 10
   fi
 done
 
 # Проверяем еще раз, что сервер действительно работает
-if ! curl -f http://localhost:11434/api/tags > /dev/null 2>&1; then
+if ! curl -f http://127.0.0.1:11434/api/tags > /dev/null 2>&1; then
   echo "❌ Ollama server failed to start!"
   exit 1
 fi

@@ -4,7 +4,7 @@
 echo "🔍 Checking Ollama health..."
 
 # Check if Ollama is responding
-if curl -f http://localhost:11434/api/tags > /dev/null 2>&1; then
+if curl -f http://127.0.0.1:11434/api/tags > /dev/null 2>&1; then
   echo "✅ Ollama is healthy!"
   exit 0
 else

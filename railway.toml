@@ -5,7 +5,7 @@ dockerfilePath = "Dockerfile"
 [deploy]
 startCommand = "/setup-models.sh"
 healthcheckPath = "/api/tags"
-healthcheckTimeout = 1200
+healthcheckTimeout = 1800
 restartPolicyType = "always"
 
 [env]
