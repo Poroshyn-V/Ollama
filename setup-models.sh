@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# Запускаем простой HTTP сервер для healthcheck
+echo "🚀 Starting health check server..."
+node /simple-server.js &
+
 # Запускаем Ollama в фоне
 echo "🚀 Starting Ollama server..."
 ollama serve &
