@@ -1,5 +1,8 @@
 FROM ollama/ollama:latest
 
+# Устанавливаем netcat для проверки портов
+RUN apt-get update && apt-get install -y netcat-openbsd && rm -rf /var/lib/apt/lists/*
+
 # Устанавливаем необходимые модели при запуске
 COPY setup-models.sh /setup-models.sh
 COPY healthcheck.sh /healthcheck.sh

@@ -3,8 +3,8 @@
 # Simple healthcheck script for Ollama
 echo "🔍 Checking Ollama health..."
 
-# Check if Ollama is responding
-if curl -f http://127.0.0.1:11434/api/tags > /dev/null 2>&1; then
+# Check if Ollama port is open
+if nc -z 127.0.0.1 11434; then
   echo "✅ Ollama is healthy!"
   exit 0
 else
