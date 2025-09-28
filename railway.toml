@@ -4,10 +4,11 @@ dockerfilePath = "Dockerfile"
 
 [deploy]
 startCommand = "/setup-models.sh"
-healthcheckPath = "/"
-healthcheckTimeout = 300
+healthcheckPath = "/api/tags"
+healthcheckTimeout = 600
 restartPolicyType = "always"
 
 [env]
 OLLAMA_HOST = "0.0.0.0"
 OLLAMA_ORIGINS = "*"
+OLLAMA_KEEP_ALIVE = "24h"
