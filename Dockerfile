@@ -2,7 +2,8 @@ FROM ollama/ollama:latest
 
 # Устанавливаем необходимые модели при запуске
 COPY setup-models.sh /setup-models.sh
-RUN chmod +x /setup-models.sh
+COPY healthcheck.sh /healthcheck.sh
+RUN chmod +x /setup-models.sh /healthcheck.sh
 
 # Открываем порт для API
 EXPOSE 11434
